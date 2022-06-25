@@ -42,7 +42,6 @@ function ValidateEmail(mail)
     return (true)
   }
   else {
-    alert("You have entered an invalid email address!")
     document.getElementById('email-valid').classList.add('is-invalid');
     document.getElementById('email-valid').classList.remove('is-valid');
     return (false)
@@ -61,5 +60,33 @@ function agreeto(checkbox){
         checkbox.classList.add('is-invalid')
         checkbox.classList.remove('is-valid')
         
+    }
+}
+
+function finalvalidation (){
+    var isName = document.getElementById('name-valid')
+    if (isName.classList.contains('is-valid')&& isName.value!=''){
+        console.log('validName')
+    }
+
+    else {
+        alert('The First Name entered is Invalid or is empty')
+    }
+
+    var isLastName = document.getElementById('Lastname-valid')
+    if (isLastName.classList.contains('is-valid')&& isLastName.value!=''){
+        console.log('validLastName')
+    }
+
+    else {
+        alert('The Last Name entered is Invalid or is empty')
+    }
+
+    var isEmail = document.getElementById('email-valid')
+    if (isEmail.classList.contains('is-valid')&& isLastName.value!=''){
+        console.log('ValidEmail')
+    }
+    else {
+        alert('You have entered an invalid email!')
     }
 }
