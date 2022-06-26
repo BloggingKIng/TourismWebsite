@@ -53,6 +53,11 @@
     </div>
   </div>
 </nav>
+<div class="alert alert-danger d-flex align-items-center d-none" id="alert-place" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div id="AlertPlaceHolder">
+  </div>
+</div>
 </HEADER>
 <div style="margin-top: 100px;">
 <figure class="text-center">
@@ -113,12 +118,13 @@
     </div>
   </div>
   <div class="col-12">
-    <button class="btn btn-success" type="submit" onclick="finalvalidation()">Submit form</button>
+    <button class="btn btn-success" type="submit" onclick="return finalvalidation();">Submit form</button>
   </div>
 </form>
 </div>
 </div>
-<footer class="py-3 my-4 fixed-bottom">
+
+<footer class="py-3 my-4">
   <ul class="nav nav justify-content-center border-bottom pb-3 mb-3">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="pak.html">Home</a>

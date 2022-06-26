@@ -63,30 +63,64 @@ function agreeto(checkbox){
     }
 }
 
+
+const alertPlaceholder = document.getElementById('AlertPlaceHolder')
+var danger = document.getElementById('alert-place')
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+var true_false = []
 function finalvalidation (){
+
     var isName = document.getElementById('name-valid')
     if (isName.classList.contains('is-valid')&& isName.value!=''){
         console.log('validName')
+        true_false.push(true)
     }
 
     else {
+        danger.classList.remove('d-none')
         alert('The First Name entered is Invalid or is empty')
+        true_false.push(false)
     }
 
     var isLastName = document.getElementById('Lastname-valid')
     if (isLastName.classList.contains('is-valid')&& isLastName.value!=''){
         console.log('validLastName')
+        true_false.push(true)
     }
 
     else {
+        danger.classList.remove('d-none')
         alert('The Last Name entered is Invalid or is empty')
+        true_false.push(false)
     }
 
     var isEmail = document.getElementById('email-valid')
     if (isEmail.classList.contains('is-valid')&& isLastName.value!=''){
         console.log('ValidEmail')
+        true_false.push(true)
     }
     else {
+        danger.classList.remove('d-none')
         alert('You have entered an invalid email!')
+        true_false.push(false)
+    }
+
+    if (true_false.includes(false)){
+        return false
+    }
+
+    else {
+        return true
     }
 }
